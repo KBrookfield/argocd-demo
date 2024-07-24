@@ -4,7 +4,7 @@ metadata:
   labels:
     vm.name: cli-vm
   name: cli-vm
-  namespace: namespace-1
+  namespace: other-ns
 spec:
   imageName: vmi-4fe3c975bec6c02aa
   className: best-effort-small
@@ -21,7 +21,7 @@ apiVersion: v1
 kind: Secret
 metadata:
     name: cli-vm-cm
-    namespace: namespace-1
+    namespace: other-ns
 stringData:
   user-data: |
     #cloud-config
@@ -68,7 +68,7 @@ apiVersion: vmoperator.vmware.com/v1alpha1
 kind: VirtualMachineService
 metadata:
   name: cli-vm-lb
-  namespace: namespace-1
+  namespace: other-ns
 spec:
   ports:
   - name: ssh
