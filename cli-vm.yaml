@@ -6,7 +6,7 @@ metadata:
   name: cli-vm
   namespace: namespace-1
 spec:
-  imageName: vmi-e1f344eb9636db690
+  imageName: vmi-4fe3c975bec6c02aa
   className: best-effort-small
   powerState: poweredOn
   storageClass: k8s-storage-policy
@@ -63,12 +63,6 @@ stringData:
       - cp certs/lin/351d2e9c.0 ca.crt
       - sudo cp ca.crt /usr/local/share/ca-certificates
       - sudo update-ca-certificates
-      # Mount Persistent Volume
-      - parted -s /dev/sdb -- mkpart primary ext4 0% 100%
-      - mkfs -t ext4 /dev/sdb1
-      - mkdir -p /mnt/pv
-      - echo '/dev/sdb1 /mnt/pv ext4 defaults 0 2' >>/etc/fstab
-      - mount -a
 ---
 apiVersion: vmoperator.vmware.com/v1alpha1
 kind: VirtualMachineService
