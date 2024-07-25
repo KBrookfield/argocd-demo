@@ -6,7 +6,7 @@ metadata:
   name: cli-vm
   namespace: other-ns
 spec:
-  imageName: vmi-4fe3c975bec6c02aa
+  imageName: vmi-a4120fbbf9e6f5007
   className: best-effort-small
   powerState: poweredOn
   storageClass: k8s-storage-policy
