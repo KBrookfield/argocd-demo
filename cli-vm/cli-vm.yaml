@@ -63,6 +63,10 @@ stringData:
       - cp certs/lin/351d2e9c.0 ca.crt
       - sudo cp ca.crt /usr/local/share/ca-certificates
       - sudo update-ca-certificates
+      # Install Packer
+      - curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+      - sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+      - sudo apt-get update && sudo apt-get install packer
 ---
 apiVersion: vmoperator.vmware.com/v1alpha1
 kind: VirtualMachineService
