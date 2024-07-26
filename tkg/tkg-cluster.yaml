@@ -28,4 +28,4 @@ spec:
       machineDeployments:
         - class: node-pool
           name: tkg-cluster-nodepool
-          replicas: 1
+          replicas: 2
