@@ -7,7 +7,7 @@ metadata:
   namespace: other-ns
 spec:
   imageName: vmi-4fe3c975bec6c02aa
-  className: best-effort-small
+  className: best-effort-large
   powerState: poweredOn
   storageClass: k8s-storage-policy
   networkInterfaces:
