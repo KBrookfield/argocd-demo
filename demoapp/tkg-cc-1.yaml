@@ -52,7 +52,7 @@ spec:
                       storage: 5Gi
         - class: node-pool
           name: tkg-cluster-nodepool-9yde
-          replicas: 1
+          replicas: 2
           metadata:
             annotations:
               run.tanzu.vmware.com/resolve-os-image: os-name=photon
