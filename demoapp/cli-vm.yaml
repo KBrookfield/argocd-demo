@@ -7,7 +7,7 @@ metadata:
     vm-selector: cli-vm
     cli-vm-lb-jgb1: vm-lb-selector
 spec:
-  className: best-effort-small
+  className: best-effort-large
   imageName: vmi-06f1807c69d0c34e6
   storageClass: k8s-storage-policy
   powerState: poweredOn
