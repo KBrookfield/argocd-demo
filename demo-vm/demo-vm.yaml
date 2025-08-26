@@ -1,0 +1,30 @@
+apiVersion: vmoperator.vmware.com/v1alpha3
+kind: VirtualMachine
+metadata:
+  name: demo-vm
+  namespace: dev-w6vw5
+  labels:
+    vm-selector: demo-vm
+    vm-lb-xc1d: vm-lb-selector
+    topology.kubernetes.io/zone: zone1
+spec:
+  className: best-effort-xsmall
+  # Friendly image name: ubuntu-24.04
+  imageName: vmi-13845f5455c77f234
+  storageClass: vi1-paris-cl01-vsan
+  powerState: PoweredOn
+  volumes:
+    - name: demo-vm-pvc-0
+      persistentVolumeClaim:
+        claimName: demo-vm-pvc-0
+  bootstrap:
+    cloudInit:
+      cloudConfig:
+        defaultUserEnabled: true
+        users:
+          - name: devops
+            passwd:
+              name: demo-vm-bootstrap-secret
+              key: devops-passwd
+            lock_passwd: false
+            sudo: ALL=(ALL) NOPASSWD:ALL
